@@ -1,0 +1,287 @@
+:root {
+  --maroon: #7A1F2B;
+  --maroon-dark: #5A1620;
+  --gold: #C89B3C;
+  --cream: #FFF8F0;
+  --ink: #2B1B17;
+  --teal: #2F4858;
+  --card-bg: #FFFFFF;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  margin: 0;
+}
+
+h1, h2, h3, .brand-icon + span, .navbar-brand {
+  font-family: 'Playfair Display', serif;
+}
+
+.eyebrow {
+  color: var(--gold);
+  letter-spacing: 2px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+}
+
+/* ===== Navbar ===== */
+.custom-navbar {
+  background: var(--cream);
+  border-bottom: 2px solid var(--gold);
+  padding: 0.9rem 0;
+}
+.navbar-brand {
+  font-weight: 800;
+  color: var(--maroon) !important;
+  font-size: 1.5rem;
+}
+.navbar-brand span { color: var(--gold); }
+.brand-icon { color: var(--gold); margin-right: 6px; }
+.nav-link {
+  color: var(--ink) !important;
+  font-weight: 500;
+  margin: 0 8px;
+  position: relative;
+}
+.nav-link:hover { color: var(--maroon) !important; }
+
+/* ===== Kolam dot strip (signature element) ===== */
+.kolam-strip {
+  height: 14px;
+  width: 100%;
+  background-image: radial-gradient(circle, var(--gold) 2.5px, transparent 2.6px);
+  background-size: 24px 24px;
+  background-position: center;
+  background-color: var(--maroon);
+  opacity: 0.9;
+}
+.kolam-strip.flip { transform: scaleY(-1); }
+
+/* ===== Hero ===== */
+.hero {
+  background: linear-gradient(180deg, var(--maroon) 0%, var(--maroon-dark) 100%);
+  color: #fff;
+  padding: 0;
+}
+.hero-content { padding: 4.5rem 1rem 4rem; }
+.hero h1 {
+  font-weight: 800;
+  font-size: 2.9rem;
+  line-height: 1.25;
+  margin: 0.5rem 0 1rem;
+}
+.hero .eyebrow { color: var(--gold); }
+.hero-sub {
+  max-width: 560px;
+  margin: 0 auto;
+  color: #f1e3d3;
+  font-weight: 300;
+}
+.btn-hero {
+  background: var(--gold);
+  color: var(--maroon-dark);
+  font-weight: 600;
+  padding: 0.7rem 2rem;
+  border-radius: 40px;
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-hero:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  color: var(--maroon-dark);
+}
+
+/* ===== Stats bar ===== */
+.stats-bar {
+  background: var(--teal);
+  color: #fff;
+  padding: 1.6rem 0;
+}
+.stats-bar h3 {
+  font-weight: 700;
+  margin-bottom: 0.1rem;
+  font-size: 1.5rem;
+  color: var(--gold);
+}
+.stats-bar p {
+  margin: 0;
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+/* ===== Profiles section ===== */
+.profiles-section { padding: 4rem 0 3rem; }
+.section-heading h2 {
+  color: var(--maroon);
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.filter-bar {
+  background: #fff;
+  border: 1px solid #eee0cc;
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 6px 20px rgba(122,31,43,0.05);
+}
+.filter-bar .input-group-text { background: var(--cream); color: var(--maroon); border-right: 0; }
+.filter-bar .form-control, .filter-bar .form-select {
+  border-color: #eee0cc;
+}
+.filter-bar .form-control:focus, .filter-bar .form-select:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 0.2rem rgba(200,155,60,0.25);
+}
+
+/* Profile card */
+.profile-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  overflow: hidden;
+  height: 100%;
+  border: 1px solid #f0e4cf;
+  box-shadow: 0 8px 24px rgba(122,31,43,0.07);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+}
+.profile-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(122,31,43,0.15);
+}
+.profile-card .corner-tick {
+  position: absolute;
+  top: 0; right: 0;
+  width: 0; height: 0;
+  border-style: solid;
+  border-width: 0 46px 46px 0;
+  border-color: transparent var(--gold) transparent transparent;
+  z-index: 2;
+}
+.profile-card .corner-tick i {
+  position: absolute;
+  top: 4px; right: -42px;
+  color: var(--maroon-dark);
+  font-size: 0.75rem;
+}
+.profile-photo-wrap {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: #eee;
+}
+.profile-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+.profile-body { padding: 1.1rem 1.2rem 1.3rem; text-align: center; }
+.profile-body h4 {
+  font-family: 'Playfair Display', serif;
+  color: var(--maroon);
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+  font-size: 1.25rem;
+}
+.profile-body .profession {
+  color: var(--teal);
+  font-weight: 500;
+  font-size: 0.92rem;
+  margin-bottom: 0.5rem;
+}
+.profile-body .salary {
+  display: inline-block;
+  background: var(--cream);
+  color: var(--maroon-dark);
+  border: 1px dashed var(--gold);
+  border-radius: 30px;
+  padding: 0.25rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.9rem;
+}
+.btn-view {
+  background: var(--maroon);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 0.45rem 1.4rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+.btn-view:hover { background: var(--maroon-dark); color: #fff; }
+
+/* ===== About ===== */
+.about-section { background: #fff; }
+.about-section h2 { color: var(--maroon); font-weight: 700; }
+.about-text { color: #555; line-height: 1.7; }
+.about-list { list-style: none; padding: 0; margin-top: 1.2rem; }
+.about-list li { margin-bottom: 0.6rem; font-weight: 500; }
+.about-list i { color: var(--gold); margin-right: 8px; }
+
+.about-card {
+  background: var(--maroon);
+  color: #fff;
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  position: relative;
+}
+.about-card .quote-icon { color: var(--gold); font-size: 1.8rem; margin-bottom: 1rem; }
+.about-card p { font-size: 1.25rem; font-family: 'Playfair Display', serif; margin-bottom: 0.8rem; }
+.about-card span { color: #f1e3d3; font-size: 0.9rem; }
+
+/* ===== Footer ===== */
+.footer {
+  background: var(--maroon-dark);
+  color: #f1e3d3;
+  padding: 2.5rem 0 1.5rem;
+}
+.footer h3 { color: #fff; margin-bottom: 0.6rem; }
+.footer-note {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+/* ===== Modal ===== */
+.modal-content {
+  border-radius: 18px;
+  border: none;
+  overflow: hidden;
+}
+#modalBody img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--gold);
+  margin-bottom: 1rem;
+}
+#modalBody h4 {
+  font-family: 'Playfair Display', serif;
+  color: var(--maroon);
+  font-weight: 700;
+}
+#modalBody .modal-profession { color: var(--teal); font-weight: 500; margin-bottom: 1rem; }
+#modalBody .detail-row {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed #eadfc9;
+  padding: 0.5rem 0.2rem;
+  font-size: 0.92rem;
+}
+#modalBody .detail-row span:first-child { color: #888; }
+#modalBody .detail-row span:last-child { font-weight: 600; color: var(--ink); }
+
+@media (max-width: 576px) {
+  .hero h1 { font-size: 2.1rem; }
+}
